@@ -104,3 +104,4 @@ by setting deprecation_warnings=False in ansible.cfg.
     "ping": "pong"
 }
 2019-09-10 01:41:47,783 p=2384 u=vagrant |  - apacheinstall was created successfully
+2019-09-10 02:18:31,680 p=2619 u=vagrant |  - apache was created successfully
