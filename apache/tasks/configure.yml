@@ -3,8 +3,12 @@
   copy:
     src: /apache/files/apache2.conf
     dest: /etc/apache2/apache2.conf
+    owner: vagrant
+    mode: '0755'
 - name: create webpage in index.html
   copy:
     src: /apache/files/index.html
     dest: /etc/apache2/index.html
+    owner: vagrant
+    mode: '0755'
   
