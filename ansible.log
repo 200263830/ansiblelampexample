@@ -105,3 +105,62 @@ by setting deprecation_warnings=False in ansible.cfg.
 }
 2019-09-10 01:41:47,783 p=2384 u=vagrant |  - apacheinstall was created successfully
 2019-09-10 02:18:31,680 p=2619 u=vagrant |  - apache was created successfully
+2019-09-10 02:20:53,972 p=2647 u=vagrant |  localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 02:20:55,610 p=2647 u=vagrant |  app1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 02:20:55,634 p=2647 u=vagrant |  db | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 02:20:55,641 p=2647 u=vagrant |  app2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 02:20:55,656 p=2647 u=vagrant |  lb | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 03:08:30,526 p=3038 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:08:35,512 p=3044 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:08:50,352 p=3051 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:08:50,465 p=3051 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:08:55,130 p=3051 u=vagrant |  ok: [app2]
+2019-09-10 03:08:55,133 p=3051 u=vagrant |  ok: [app1]
+2019-09-10 03:08:55,150 p=3051 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:08:55,214 p=3051 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:08:55,232 p=3051 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:08:57,521 p=3051 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:08:57,521 p=3051 u=vagrant |  ok: [app1]
+2019-09-10 03:08:58,294 p=3051 u=vagrant |  ok: [app2]
+2019-09-10 03:08:58,311 p=3051 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:08:58,378 p=3051 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:08:58,420 p=3051 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:08:58,515 p=3051 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:08:58,515 p=3051 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:08:58,517 p=3051 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:08:58,518 p=3051 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:08:58,519 p=3051 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:08:58,520 p=3051 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:08:58,520 p=3051 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:12:24,401 p=3145 u=vagrant |  - install was created successfully
