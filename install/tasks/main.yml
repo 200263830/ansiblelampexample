@@ -1,2 +1,6 @@
 ---
+- name: install php
+  apt:
+    name: libapache2-mod-php
+    state: latest
 # tasks file for install
