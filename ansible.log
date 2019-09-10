@@ -1,0 +1,106 @@
+2019-09-10 01:37:04,559 p=2127 u=vagrant |  [DEPRECATION WARNING]: Distribution Ubuntu 16.04 on host localhost should use 
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with 
+prior Ansible releases. A future Ansible release will default to using the 
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.8/reference_appendices/interpreter_discovery.html for more information. This 
+feature will be removed in version 2.12. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2019-09-10 01:37:04,567 p=2127 u=vagrant |  localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:37:13,102 p=2127 u=vagrant |  [DEPRECATION WARNING]: Distribution Ubuntu 16.04 on host app2 should use 
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with 
+prior Ansible releases. A future Ansible release will default to using the 
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.8/reference_appendices/interpreter_discovery.html for more information. This 
+feature will be removed in version 2.12. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2019-09-10 01:37:13,102 p=2127 u=vagrant |  app2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:37:13,241 p=2127 u=vagrant |  [DEPRECATION WARNING]: Distribution Ubuntu 16.04 on host app1 should use 
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with 
+prior Ansible releases. A future Ansible release will default to using the 
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.8/reference_appendices/interpreter_discovery.html for more information. This 
+feature will be removed in version 2.12. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2019-09-10 01:37:13,241 p=2127 u=vagrant |  app1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:37:13,483 p=2127 u=vagrant |  [DEPRECATION WARNING]: Distribution Ubuntu 16.04 on host lb should use 
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with 
+prior Ansible releases. A future Ansible release will default to using the 
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.8/reference_appendices/interpreter_discovery.html for more information. This 
+feature will be removed in version 2.12. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2019-09-10 01:37:13,483 p=2127 u=vagrant |  lb | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:37:13,581 p=2127 u=vagrant |  [DEPRECATION WARNING]: Distribution Ubuntu 16.04 on host db should use 
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with 
+prior Ansible releases. A future Ansible release will default to using the 
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.8/reference_appendices/interpreter_discovery.html for more information. This 
+feature will be removed in version 2.12. Deprecation warnings can be disabled 
+by setting deprecation_warnings=False in ansible.cfg.
+2019-09-10 01:37:13,583 p=2127 u=vagrant |  db | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:38:58,684 p=2251 u=vagrant |  localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:39:00,625 p=2251 u=vagrant |  db | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:39:00,651 p=2251 u=vagrant |  app2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:39:00,658 p=2251 u=vagrant |  app1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:39:00,660 p=2251 u=vagrant |  lb | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2019-09-10 01:41:47,783 p=2384 u=vagrant |  - apacheinstall was created successfully
