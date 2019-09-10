@@ -1,0 +1,15 @@
+[local]
+localhost ansible_connection=local
+
+[app]
+app1
+app2
+
+[loadbalancer]
+lb
+
+[database]
+db
+
+[staging:children]
+app

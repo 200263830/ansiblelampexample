@@ -1,0 +1,7 @@
+---
+- name: install apache in apps
+  hosts: app
+  become: true
+  roles:
+    - apacheinstall
+...
