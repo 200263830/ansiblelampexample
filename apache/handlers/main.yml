@@ -1,2 +1,7 @@
 ---
+# restarting serverless
+- name: restart apache service
+  service:
+    name: apache2
+    state: restarted
 # handlers file for apache
