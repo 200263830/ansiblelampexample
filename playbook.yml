@@ -9,6 +9,7 @@
         encoding: utf8
         replicate: 1
     mysql_user_password: tiger
+    mysql_root_password: tiger
   roles:
     - geerlingguy.mysql    
 ...
