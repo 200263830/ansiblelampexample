@@ -164,3 +164,123 @@ by setting deprecation_warnings=False in ansible.cfg.
 2019-09-10 03:08:58,520 p=3051 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2019-09-10 03:08:58,520 p=3051 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2019-09-10 03:12:24,401 p=3145 u=vagrant |  - install was created successfully
+2019-09-10 03:23:35,340 p=3249 u=vagrant |  ERROR! Syntax Error while loading YAML.
+  block sequence entries are not allowed in this context
+
+The error appears to be in '/home/vagrant/ansiblelampexample/playbook.yml': line 7, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - apache
+... - install
+    ^ here
+
+2019-09-10 03:25:16,777 p=3276 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:25:23,282 p=3281 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:25:23,291 p=3281 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:25:26,141 p=3281 u=vagrant |  ok: [app1]
+2019-09-10 03:25:26,152 p=3281 u=vagrant |  ok: [app2]
+2019-09-10 03:25:26,170 p=3281 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:25:26,233 p=3281 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:25:26,251 p=3281 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:25:27,103 p=3281 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:25:27,103 p=3281 u=vagrant |  ok: [app1]
+2019-09-10 03:25:27,106 p=3281 u=vagrant |  ok: [app2]
+2019-09-10 03:25:27,123 p=3281 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:25:27,186 p=3281 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:25:27,205 p=3281 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:25:27,256 p=3281 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:25:27,256 p=3281 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:25:27,291 p=3281 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:25:27,291 p=3281 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:25:27,292 p=3281 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:25:27,293 p=3281 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:25:27,293 p=3281 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:26:34,632 p=3359 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:26:34,641 p=3359 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:26:37,004 p=3359 u=vagrant |  ok: [app2]
+2019-09-10 03:26:37,007 p=3359 u=vagrant |  ok: [app1]
+2019-09-10 03:26:37,024 p=3359 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:26:37,090 p=3359 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:26:37,108 p=3359 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:26:37,933 p=3359 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:26:37,933 p=3359 u=vagrant |  ok: [app2]
+2019-09-10 03:26:37,949 p=3359 u=vagrant |  ok: [app1]
+2019-09-10 03:26:37,966 p=3359 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:26:38,030 p=3359 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:26:38,050 p=3359 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:26:38,111 p=3359 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:26:38,112 p=3359 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:26:38,131 p=3359 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:26:38,132 p=3359 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:26:38,134 p=3359 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:26:38,134 p=3359 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:26:38,135 p=3359 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:30:11,168 p=3450 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:30:15,451 p=3455 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:30:15,459 p=3455 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:30:18,098 p=3455 u=vagrant |  ok: [app2]
+2019-09-10 03:30:18,114 p=3455 u=vagrant |  ok: [app1]
+2019-09-10 03:30:18,131 p=3455 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:30:18,197 p=3455 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:30:18,215 p=3455 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:30:19,079 p=3455 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:30:19,080 p=3455 u=vagrant |  ok: [app2]
+2019-09-10 03:30:19,086 p=3455 u=vagrant |  ok: [app1]
+2019-09-10 03:30:19,110 p=3455 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:30:19,187 p=3455 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:30:19,209 p=3455 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:30:19,265 p=3455 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:30:19,266 p=3455 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:30:19,314 p=3455 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:30:19,314 p=3455 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:30:19,316 p=3455 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:30:19,317 p=3455 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:30:19,317 p=3455 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:30:31,170 p=3538 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:30:34,578 p=3543 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:30:34,586 p=3543 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:30:35,666 p=3543 u=vagrant |  ok: [app1]
+2019-09-10 03:30:35,675 p=3543 u=vagrant |  ok: [app2]
+2019-09-10 03:30:35,692 p=3543 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:30:35,761 p=3543 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:30:35,779 p=3543 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:30:36,614 p=3543 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:30:36,615 p=3543 u=vagrant |  ok: [app1]
+2019-09-10 03:30:36,620 p=3543 u=vagrant |  ok: [app2]
+2019-09-10 03:30:36,638 p=3543 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:30:36,702 p=3543 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:30:36,721 p=3543 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:30:36,771 p=3543 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:30:36,771 p=3543 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:30:36,805 p=3543 u=vagrant |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2019-09-10 03:30:36,806 p=3543 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "msg": "Could not find or access '/apache/files/apache2.conf' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-09-10 03:30:36,807 p=3543 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:30:36,808 p=3543 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:30:36,808 p=3543 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:31:52,614 p=3628 u=vagrant |  playbook: playbook.yml
+2019-09-10 03:31:57,625 p=3633 u=vagrant |  PLAY [install apache in apps] **************************************************
+2019-09-10 03:31:57,634 p=3633 u=vagrant |  TASK [Gathering Facts] *********************************************************
+2019-09-10 03:32:00,049 p=3633 u=vagrant |  ok: [app1]
+2019-09-10 03:32:00,052 p=3633 u=vagrant |  ok: [app2]
+2019-09-10 03:32:00,069 p=3633 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:32:00,135 p=3633 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/install.yml for app1, app2
+2019-09-10 03:32:00,154 p=3633 u=vagrant |  TASK [apache : installing apache2 server] **************************************
+2019-09-10 03:32:01,032 p=3633 u=vagrant |   [WARNING]: Could not find aptitude. Using apt-get instead
+
+2019-09-10 03:32:01,033 p=3633 u=vagrant |  ok: [app2]
+2019-09-10 03:32:01,048 p=3633 u=vagrant |  ok: [app1]
+2019-09-10 03:32:01,066 p=3633 u=vagrant |  TASK [apache : include_tasks] **************************************************
+2019-09-10 03:32:01,129 p=3633 u=vagrant |  included: /home/vagrant/ansiblelampexample/apache/tasks/configure.yml for app1, app2
+2019-09-10 03:32:01,150 p=3633 u=vagrant |  TASK [apache : Copy file with owner and permissions] ***************************
+2019-09-10 03:32:01,969 p=3633 u=vagrant |  fatal: [app1]: FAILED! => {"changed": false, "checksum": "c8005ae810584e042cbf2297ef709b5831f9801c", "msg": "Destination directory ./etc/apache2 does not exist"}
+2019-09-10 03:32:01,986 p=3633 u=vagrant |  fatal: [app2]: FAILED! => {"changed": false, "checksum": "c8005ae810584e042cbf2297ef709b5831f9801c", "msg": "Destination directory ./etc/apache2 does not exist"}
+2019-09-10 03:32:01,987 p=3633 u=vagrant |  PLAY RECAP *********************************************************************
+2019-09-10 03:32:01,988 p=3633 u=vagrant |  app1                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-10 03:32:01,988 p=3633 u=vagrant |  app2                       : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2019-09-12 00:52:56,820 p=2086 u=vagrant |  - mysql was created successfully
