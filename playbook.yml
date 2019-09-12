@@ -9,5 +9,5 @@
         encoding: utf8
         replicate: 1
   roles:
-    - greenlingguy.mysql    
+    - geerlingguy.mysql    
 ...
