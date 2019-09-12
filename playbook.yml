@@ -9,7 +9,5 @@
         encoding: utf8
         replicate: 1
   roles:
-    #- apache
-    #- install
-    - greenlingguy.mysql
+    - greenlingguy.mysql    
 ...
