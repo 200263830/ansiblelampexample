@@ -8,6 +8,7 @@
         collation: utf8_general_ci
         encoding: utf8
         replicate: 1
+    mysql_user_password: tiger
   roles:
     - geerlingguy.mysql    
 ...
